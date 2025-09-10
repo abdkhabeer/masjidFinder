@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Masjid Locator</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+</head>
+<body>
+  <header>
+    <h1>🕌 Masjid Locator</h1>
+    <p class="subtitle">
+      Quickly find nearby masjids or prayer spaces using the interactive map.  
+      You can also add your own masjid locations, see notes from the community, and follow the Qibla direction.
+    </p>
+  
+    <input type="text" id="searchInput" placeholder="Enter city or zip code..." />
+    <button onclick="searchMasjids()">Search</button>
+  </header>
+
+  <main>
+    <!-- <div id="https://leafletjs.com/">🗺️ Map will appear here</div> -->
+     <div id="map"></div>
+    <div id="results"></div>
+  </main>
+
+  <section id="addMasjidSection">
+    <h2>Add a Masjid</h2>
+    <form id="masjidForm">
+      <input type="text" id="masjidName" placeholder="Masjid name" required />
+      <input type="text" id="masjidLat" placeholder="Latitude" required />
+      <input type="text" id="masjidLng" placeholder="Longitude" required />
+      <button type="button" id="useMyLocation">📍 Use My Current Location</button>
+      <textarea id="masjidNotes" placeholder="Notes (comma separated)"></textarea>
+      <button type="submit">Add Masjid</button>
+    </form>
+  </section>
+  
+
+  <script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+  <script src="app.js"></script>
+  
+</body>
+</html>
